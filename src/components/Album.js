@@ -77,8 +77,10 @@ class Album extends Component {
                   onMouseLeave={() => this.setState({ hoveredSong: null })}>
 
                     <td>
-                      {this.state.hoveredSong === song ? (<ion-icon name="ios-heart"></ion-icon>) :
-                         (<span className="song-number">{index + 1}</span>)}
+                      {this.state.currentSong === song ? 
+                        (<ion-icon name={this.state.isPlaying ? "pause" : "play"} />) :
+                        this.state.hoveredSong === song ? (<ion-icon name= "play" />) :
+                        (<span className="song-number">{index + 1}</span>)}
                     </td>
                     <td>{song.title}</td>
                     <td>{song.duration}</td>
