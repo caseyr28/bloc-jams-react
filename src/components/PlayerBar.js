@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
+import '../index.css';
+import '../material.min.css';
  
 class PlayerBar extends Component {
   render() {
     return (
       <section className="player-bar">
          <section id="buttons">
-           <button id="previous" onClick={this.props.handlePrevClick}>
+           <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" onClick={this.props.handlePrevClick}>
              <ion-icon name="skip-backward" />
            </button>
-           <button id="play-pause" onClick={this.props.handleSongClick} >
+           <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" onClick={this.props.handleSongClick} >
            <ion-icon name={this.props.isPlaying ? 'pause' : 'play'} />
            </button>
-           <button id="next" onClick={this.props.handleNextClick}>
+           <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" onClick={this.props.handleNextClick}>
             <ion-icon name="skip-forward" />
            </button>
          </section>
@@ -19,7 +21,7 @@ class PlayerBar extends Component {
          <div className="current-time">{this.props.formatTime(this.props.currentTime)}</div>
            <input 
              type="range" 
-             className="seek-bar" 
+             className="mdl-slider mdl-js-slider" 
              value={(this.props.currentTime / this.props.duration) || 0} 
              max="1" 
              min="0" 
@@ -33,7 +35,7 @@ class PlayerBar extends Component {
            <div className="icon ion-volume-low"></div>
            <input 
             type="range" 
-            className="seek-bar" 
+            className="mdl-slider mdl-js-slider" 
             value={this.props.currentVolume}
             max="1.0"
             min="0.0"
