@@ -4,7 +4,6 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Source Code Pro', monospace;
   color: aliceblue;
   background: url(./img/bg.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -13,22 +12,30 @@ body {
   background-size: cover;
   
 }
+/*-------------Fonts--------------------------*/
+h1, h2, h3, h4, h5, h6, a, p, td, div{
+  font-family: 'Source Code Pro', monospace !important;
+
+}
+
+p{
+  font-size: 16px !important;
+  line-height: 20px !important;
+}
+
 
 a {
-  color: aliceblue;
+  color: #FBD786 !important;
   text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  padding-top: 14px;
 }
 
 header{
   display: grid;
   grid-template-columns: 30%;
   padding: 5em 0 3em 6em;
-
-}
-header a {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding-top: 14px;
 
 }
 
@@ -47,10 +54,11 @@ h1{
 }
 
 
+
 /*---------------------HOME PAGE-----------------------*/
 .landing {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 30% 70%;
   grid-template-rows: 10% 100px auto;
   text-align: left;
   padding-left: 6em;
@@ -60,7 +68,14 @@ h1{
   grid-column-start: 2;
   grid-row-start: 1;
   padding-left: 3em;
+  grid-row-end: 4;
+  justify-self: center;
+  max-width: 100%;
+}
 
+.logoarea img{
+  height: 90vh;
+  margin-top: -10em;
 }
 
 /*---------------------LIBRARY PAGE-----------------------*/
@@ -132,23 +147,228 @@ h1{
 /*---------------------PLAYBAR-----------------------*/
 
 .player-bar{
-  display: grid;
+  background: #C6FFDD;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-box-shadow: 0px 0px 90px -17px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 0px 90px -17px rgba(0,0,0,0.57);
+  box-shadow: 0px 0px 90px -17px rgba(0,0,0,0.57);
+  height: 250px;
+  width: 250px;
+  border-radius: 20%;
   position: absolute;
-  left: 0;
-  bottom: 0;
-  background-color: aqua;
-  width: 100vw;
-  grid-template-columns: 1fr 1fr 1fr;
+  left: 41.2%;
+  bottom: 30%;
+
+
 
 }
 
 #buttons{
-  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 50px 20px;
+}
 
-  left: 44%;
+.playPause{
+  background-color: black;
 }
 
 #time-control, #volume-control{
-  width: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
+}
+
+/*---------------------Material design lite overrides-----------------------*/
+
+.hero-title, #album-title{
+  font-size: 30px;
+  line-height: 40px;
+  letter-spacing: 3px;
+}
+
+.point-title, .artist{
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+#release-info, .song{
+  font-size: 18px;
+  line-height: 30px;
+}
+
+#time-control{
+  color:#5710c0 !important;
+}
+
+.mdl-button--fab.mdl-button--colored{
+  background:#5710c0 !important;
+}
+
+.mdl-slider, .mdl-js-slider,  .is-upgraded, .mdl-slider__container{
+  color:#5710c0 !important;
+}
+
+/*---------------------MOBILE STYLES-----------------------*/
+
+@media screen and (min-width: 375px) and (max-width: 767px){
+
+  header {
+    padding: 2em 0 5em 2em;
+  }
+
+  .landing {
+    grid-template-columns: 80%;
+    padding-left: 1em;
+  }
+
+  .logoarea {
+    grid-column-start: 1;
+    padding-left: 1em;
+
+  }
+
+  .logoarea img {
+    width: 60vw;
+    height: 300px;
+    margin: 0 0 3em 2em;
+  }
+
+  .hero-title, #album-title {
+    margin-top: 0;
+  }
+
+  .library {
+    grid-gap: 60px;
+    padding: 2em;
+    justify-items: center;
+    grid-template-columns: 100%;
+
+  }
+
+  .album {
+    padding: 1em 2em;
+  }
+
+  #album-info {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+  }
+
+  .bigImage {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    grid-row-start: 4;
+    background-color: transparent;
+    margin-bottom: 100%;
+  }
+
+  #album-cover-art {
+    width: 100%;
+
+  }
+
+  .player-bar {
+    height: 210px;
+    width: 100%;
+    border-radius: 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+
+  }
+
+  #buttons {
+    padding: 28px 30px;
+  }
+
+}
+
+
+/*---------------------TABLET STYLES-----------------------*/
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+
+  header {
+    padding: 2em 0 5em 2em;
+  }
+
+  .landing {
+    grid-template-columns: 80%;
+    padding-left: 2em;
+  }
+
+  .logoarea {
+    grid-column-start: 1;
+    padding-left: 1em;
+
+  }
+
+  .logoarea img {
+    width: 70vw;
+    height: 590px;
+    margin: 0 0 3em 6em;
+}
+
+  .hero-title, #album-title {
+    margin-top: 0;
+  }
+
+  .library {
+    grid-gap: 60px;
+    padding: 2em;
+    justify-items: center;
+    grid-template-columns: 100%;
+
+  }
+
+  .album {
+    padding: 1em 2em;
+  }
+
+  #album-info {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+  }
+
+  .bigImage {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    grid-row-start: 4;
+    background-color: transparent;
+    margin-bottom: 40%;
+  }
+
+  #album-cover-art {
+    width: 100%;
+
+  }
+
+  .player-bar {
+    height: 210px;
+    width: 100%;
+    border-radius: 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
+
+  #buttons {
+    padding: 28px 30px;
+  }
 
 }

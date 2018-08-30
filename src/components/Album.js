@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
-import '../index.css';
-import '../material.min.css';
+
+
 
 
 

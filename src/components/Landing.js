@@ -1,5 +1,6 @@
 import React from 'react';
 import '../index.css';
+import logo from './../img/bloc-jams-logo2.svg'; //import my logo
 
 
 const Landing = () => (
@@ -22,7 +23,7 @@ const Landing = () => (
       </div>
     </section>
     <section className="logoarea">
-
+      <img src={logo} alt="logo"></img>
     </section>
   </section>
 );

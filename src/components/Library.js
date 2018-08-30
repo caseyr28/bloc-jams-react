@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import albumData from './../data/albums';
+import logo from './../img/bloc-jams-logo2.svg'; //import my logo
 
 
 
@@ -13,8 +14,10 @@ class Library extends Component {
   }
  
   render() {
-   return ( 
+   return (
+
      <section className='library'>
+
        {
           this.state.albums.map( (album, index) => 
 
