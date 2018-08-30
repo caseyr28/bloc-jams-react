@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import '../index.css';
-import '../material.min.css';
+
+
  
 class PlayerBar extends Component {
   render() {
     return (
       <section className="player-bar">
          <section id="buttons">
-           <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" onClick={this.props.handlePrevClick}>
+           <button className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored back" onClick={this.props.handlePrevClick}>
              <ion-icon name="skip-backward" />
            </button>
-           <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" onClick={this.props.handleSongClick} >
+           <button className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored playPause" onClick={this.props.handleSongClick} >
            <ion-icon name={this.props.isPlaying ? 'pause' : 'play'} />
            </button>
-           <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" onClick={this.props.handleNextClick}>
+           <button className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored next" onClick={this.props.handleNextClick}>
             <ion-icon name="skip-forward" />
            </button>
          </section>
@@ -47,6 +47,7 @@ class PlayerBar extends Component {
         </section>
     );
   }
+
 }
 
 export default PlayerBar;
